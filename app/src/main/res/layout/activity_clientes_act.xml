@@ -8,54 +8,52 @@
     tools:context=".Clientes_act">
 
     <Spinner
-        android:id="@+id/spnClientes"
-        android:layout_width="288dp"
-        android:layout_height="52dp"
+        android:id="@+id/spinClientes"
+        android:layout_width="285dp"
+        android:layout_height="43dp"
         android:layout_marginTop="68dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/spnPlanes"
-        android:layout_width="288dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="32dp"
+        android:id="@+id/spinPlanes"
+        android:layout_width="285dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spnClientes" />
+        app:layout_constraintTop_toBottomOf="@+id/spinClientes" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="289dp"
-        android:layout_height="105dp"
-        android:layout_marginTop="48dp"
+        android:layout_width="276dp"
+        android:layout_height="132dp"
+        android:layout_marginTop="52dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spnPlanes">
+        app:layout_constraintTop_toBottomOf="@+id/spinPlanes">
 
         <EditText
             android:id="@+id/et1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Ingrese monto a cancelar"
+            android:hint="Ingrese Monto a Pagar"
             android:inputType="textPersonName" />
     </LinearLayout>
 
     <TextView
         android:id="@+id/tv"
-        android:layout_width="281dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="245dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="44dp"
         android:text="TextView"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.469"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
@@ -63,7 +61,6 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="96dp"
         android:onClick="Calcular"
         android:text="Calcular"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -71,5 +68,5 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv"
-        app:layout_constraintVertical_bias="0.421" />
+        app:layout_constraintVertical_bias="0.243" />
 </androidx.constraintlayout.widget.ConstraintLayout>
