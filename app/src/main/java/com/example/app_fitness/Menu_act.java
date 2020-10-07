@@ -68,9 +68,12 @@ public class Menu_act extends AppCompatActivity {
         listaClientes.add("Roberto");
         listaClientes.add("Ivan");
         listaClientes.add("Patricio");
+        listaClientes.add("Juan");
 
         listaPlanes.add("xtreme");       // añado elementos al array.
         listaPlanes.add("mindfullness");
+        listaPlanes.add("premium");
+        listaPlanes.add("fitness");
 
         Intent i = new Intent(this, Clientes_act.class);
         i.putExtra("listaClientes", listaClientes);
