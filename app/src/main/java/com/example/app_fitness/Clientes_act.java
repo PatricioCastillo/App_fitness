@@ -63,5 +63,17 @@ public class Clientes_act extends AppCompatActivity {
         {
             text.setText("El valor mindfullnes: " + resulMind);
         }
+
+        // Inteligencia de Ivan según su plan
+
+        if(cliente.equals("Ivan") && plan.equals("xtreme"))
+        {
+            text.setText("El valor xtreme: " + resulXtreme);
+        }
+
+        if(cliente.equals("Ivan") && plan.equals("mindfullness"))
+        {
+            text.setText("El valor mindfullnes: " + resulMind);
+        }
     }
 }
