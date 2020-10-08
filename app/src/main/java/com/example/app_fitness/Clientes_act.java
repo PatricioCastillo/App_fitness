@@ -9,6 +9,9 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import Clases.Planes;
@@ -16,64 +19,58 @@ import Clases.Planes;
 public class Clientes_act extends AppCompatActivity {
 
     private Spinner spin1, spin2;
-    private TextView text;
     private EditText edit;
+    private TextView text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clientes_act);
 
-        spin1 = (Spinner) findViewById(R.id.spinClientes);
-        spin2 = (Spinner) findViewById(R.id.spinPlanes);
-        text = (TextView) findViewById(R.id.tv);
-        edit = (EditText) findViewById(R.id.et1);
+        // Llamo a los elementos por id.
 
-        // <---
-        ArrayList<String> listaClientes = (ArrayList<String>) getIntent().getSerializableExtra("listaClientes"); // Recibo mi arreglo.
+        spin1 = (Spinner) findViewById(R.id.spnClientes);
+        spin2 = (Spinner) findViewById(R.id.spnPlanes);
+        edit = (EditText) findViewById(R.id.edit);
+        text = (TextView) findViewById(R.id.tv);
+
+        // Recibiré el dato.
+
+        ArrayList<String> listaClientes = (ArrayList<String>) getIntent().getSerializableExtra("listaClientes");
         ArrayList<String> listaPlanes = (ArrayList<String>) getIntent().getSerializableExtra("listaPlanes");
 
         ArrayAdapter<String> adapt = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listaClientes);
         ArrayAdapter<String> adapts = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listaPlanes);
-
         spin1.setAdapter(adapt);
         spin2.setAdapter(adapts);
-
     }
+
 
     public void Calcular(View v)
     {
-        Planes pl = new Planes();
-
         String cliente = spin1.getSelectedItem().toString();
-        String plan =  spin2.getSelectedItem().toString();
+        String planes = spin2.getSelectedItem().toString();
 
-        int saldo = Integer.parseInt(edit.getText().toString()); // obtengo el monto.
+        Planes plan = new Planes(); // creas el objeto.
 
-        int resulXtreme = saldo - pl.getXtreme();
-        int resulMind = saldo - pl.getMindfullness();
+        plan.setXtreme(80000);  // cambia el dato.
+
+        // Añadimos la inteligencia de la resta.
+        int monto = Integer.parseInt(edit.getText().toString());
+        int resultXtreme = monto-plan.getXtreme();
 
 
-        if(cliente.equals("Roberto") && plan.equals("xtreme"))
+        // Inteligencia Roberto.
+
+        if(cliente.equals("Roberto") && planes.equals("xtreme"))
         {
-            text.setText("El valor xtreme: " + resulXtreme);
+            text.setText("El precio del plan es: " + resultXtreme);
         }
 
-        if(cliente.equals("Roberto") && plan.equals("mindfullness"))
+        if(cliente.equals("Roberto") && planes.equals("mindfullness"))
         {
-            text.setText("El valor mindfullnes: " + resulMind);
+            text.setText("El precio del plan es: " + plan.getMindfullness());
         }
 
-        // Inteligencia de Ivan según su plan
-
-        if(cliente.equals("Ivan") && plan.equals("xtreme"))
-        {
-            text.setText("El valor xtreme: " + resulXtreme);
-        }
-
-        if(cliente.equals("Ivan") && plan.equals("mindfullness"))
-        {
-            text.setText("El valor mindfullnes: " + resulMind);
-        }
     }
 }

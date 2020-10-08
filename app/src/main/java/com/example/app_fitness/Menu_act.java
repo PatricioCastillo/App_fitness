@@ -62,23 +62,23 @@ public class Menu_act extends AppCompatActivity {
 
     public void Clientes(View v)
     {
-        ArrayList<String> listaClientes = new ArrayList<String>();
-        ArrayList<String> listaPlanes = new ArrayList<String>();   // creo mi arreglo.
+        // Envíare el dato.
 
-        listaClientes.add("Roberto");
-        listaClientes.add("Ivan");
-        listaClientes.add("Patricio");
-        listaClientes.add("Juan");
+        ArrayList<String> clientes = new ArrayList<String>();
+        ArrayList<String> planes = new ArrayList<String>();
 
-        listaPlanes.add("xtreme");       // añado elementos al array.
-        listaPlanes.add("mindfullness");
-        listaPlanes.add("premium");
-        listaPlanes.add("fitness");
+        clientes.add("Roberto");
+        clientes.add("Ivan");
 
+        planes.add("xtreme");
+        planes.add("mindfullness");
+
+        // <--
         Intent i = new Intent(this, Clientes_act.class);
-        i.putExtra("listaClientes", listaClientes);
-        i.putExtra("listaPlanes", listaPlanes);  // preparo el dato para ser eniado.
+        i.putExtra("listaClientes", clientes);  // preparando el dato para ser envíado.
+        i.putExtra("listaPlanes", planes);
         startActivity(i);
     }
+
 
 }

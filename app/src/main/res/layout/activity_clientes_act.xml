@@ -8,36 +8,36 @@
     tools:context=".Clientes_act">
 
     <Spinner
-        android:id="@+id/spinClientes"
-        android:layout_width="285dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="68dp"
+        android:id="@+id/spnClientes"
+        android:layout_width="315dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="88dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/spinPlanes"
-        android:layout_width="285dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="40dp"
+        android:id="@+id/spnPlanes"
+        android:layout_width="315dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinClientes" />
+        app:layout_constraintTop_toBottomOf="@+id/spnClientes" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="276dp"
-        android:layout_height="132dp"
-        android:layout_marginTop="52dp"
+        android:layout_width="275dp"
+        android:layout_height="118dp"
+        android:layout_marginTop="68dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinPlanes">
+        app:layout_constraintTop_toBottomOf="@+id/spnPlanes">
 
         <EditText
-            android:id="@+id/et1"
+            android:id="@+id/edit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -48,8 +48,8 @@
     <TextView
         android:id="@+id/tv"
         android:layout_width="245dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="44dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="28dp"
         android:text="TextView"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -68,5 +68,6 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv"
-        app:layout_constraintVertical_bias="0.243" />
+        app:layout_constraintVertical_bias="0.29" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

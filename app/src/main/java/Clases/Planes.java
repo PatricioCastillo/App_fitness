@@ -6,6 +6,7 @@ public class Planes {
     private int xtreme;
     private int mindfullness;
 
+
     // Constructor
     public Planes()
     {
@@ -13,7 +14,7 @@ public class Planes {
         mindfullness = 24000;
     }
 
-    // Accesadores
+    // Accesadores.
     public int getXtreme()
     {
         return xtreme;
@@ -22,6 +23,12 @@ public class Planes {
     public int getMindfullness()
     {
         return mindfullness;
+    }
+
+    //  Mutadores
+    public void setXtreme(int xtreme)
+    {
+        this.xtreme = xtreme;
     }
 
 }
