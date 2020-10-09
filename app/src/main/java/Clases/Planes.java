@@ -2,33 +2,37 @@ package Clases;
 
 public class Planes {
 
-    // Declaración
-    private int xtreme;
-    private int mindfullness;
+    // Declaración de datos.
 
+    private int xtreme;
+    private int mindfullnes;
 
     // Constructor
+
     public Planes()
     {
         xtreme = 12000;
-        mindfullness = 24000;
+        mindfullnes = 24000;
     }
 
-    // Accesadores.
+    // Accesadores
+
     public int getXtreme()
     {
         return xtreme;
     }
 
-    public int getMindfullness()
+    public int getMindfullnes()
     {
-        return mindfullness;
+        return mindfullnes;
     }
 
-    //  Mutadores
+    // Mutadores
+
     public void setXtreme(int xtreme)
     {
         this.xtreme = xtreme;
     }
+
 
 }

@@ -9,9 +9,6 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import Clases.Planes;
@@ -27,20 +24,20 @@ public class Clientes_act extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clientes_act);
 
-        // Llamo a los elementos por id.
+        spin1 = (Spinner)findViewById(R.id.spnClientes);
+        spin2 = (Spinner)findViewById(R.id.spnPlanes);
+        edit = (EditText)findViewById(R.id.et1);
+        text = (TextView)findViewById(R.id.tv);
 
-        spin1 = (Spinner) findViewById(R.id.spnClientes);
-        spin2 = (Spinner) findViewById(R.id.spnPlanes);
-        edit = (EditText) findViewById(R.id.edit);
-        text = (TextView) findViewById(R.id.tv);
-
-        // Recibiré el dato.
-
+        // Recibir el dato.
+        // <----
         ArrayList<String> listaClientes = (ArrayList<String>) getIntent().getSerializableExtra("listaClientes");
         ArrayList<String> listaPlanes = (ArrayList<String>) getIntent().getSerializableExtra("listaPlanes");
 
+
         ArrayAdapter<String> adapt = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listaClientes);
         ArrayAdapter<String> adapts = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listaPlanes);
+
         spin1.setAdapter(adapt);
         spin2.setAdapter(adapts);
     }
@@ -48,16 +45,15 @@ public class Clientes_act extends AppCompatActivity {
 
     public void Calcular(View v)
     {
-        String cliente = spin1.getSelectedItem().toString();
+        Planes pl = new Planes();  // Construir mi objeto.
+        pl.setXtreme(80000);  // modifico el precio de xtreme
+
+        String cliente = spin1.getSelectedItem().toString();  // almaceno selección del spinner.
         String planes = spin2.getSelectedItem().toString();
 
-        Planes plan = new Planes(); // creas el objeto.
+        int saldo =  Integer.parseInt(edit.getText().toString());  // obtengo dato de entrada.
 
-        plan.setXtreme(80000);  // cambia el dato.
-
-        // Añadimos la inteligencia de la resta.
-        int monto = Integer.parseInt(edit.getText().toString());
-        int resultXtreme = monto-plan.getXtreme();
+        int resultXtreme = pl.getXtreme() - saldo;   // Realizó operación.
 
 
         // Inteligencia Roberto.
@@ -69,8 +65,20 @@ public class Clientes_act extends AppCompatActivity {
 
         if(cliente.equals("Roberto") && planes.equals("mindfullness"))
         {
-            text.setText("El precio del plan es: " + plan.getMindfullness());
+            text.setText("El precio del plan es: " + pl.getMindfullnes());
         }
 
+
+        // Inteligencia de Ivan ...
+
+        if(cliente.equals("Ivan") && planes.equals("xtreme"))
+        {
+            text.setText("El precio del plan es: " + resultXtreme);
+        }
+
+        if(cliente.equals("Ivan") && planes.equals("mindfullness"))
+        {
+            text.setText("El precio del plan es: " + pl.getMindfullnes());
+        }
     }
 }
