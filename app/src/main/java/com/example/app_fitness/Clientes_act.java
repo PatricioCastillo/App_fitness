@@ -42,19 +42,17 @@ public class Clientes_act extends AppCompatActivity {
         spin2.setAdapter(adapts);
     }
 
-
     public void Calcular(View v)
     {
-        Planes pl = new Planes();  // Construir mi objeto.
-        pl.setXtreme(80000);  // modifico el precio de xtreme
-
         String cliente = spin1.getSelectedItem().toString();  // almaceno selección del spinner.
         String planes = spin2.getSelectedItem().toString();
 
-        int saldo =  Integer.parseInt(edit.getText().toString());  // obtengo dato de entrada.
+        Planes plan = new Planes();  // Construir mi objeto.
 
-        int resultXtreme = pl.getXtreme() - saldo;   // Realizó operación.
+        int saldo = Integer.parseInt(edit.getText().toString());
 
+        int resultXtreme = saldo - plan.getXtreme();
+        int resultMind = saldo - plan.getMindfullnes();
 
         // Inteligencia Roberto.
 
@@ -65,11 +63,10 @@ public class Clientes_act extends AppCompatActivity {
 
         if(cliente.equals("Roberto") && planes.equals("mindfullness"))
         {
-            text.setText("El precio del plan es: " + pl.getMindfullnes());
+            text.setText("El precio del plan es: " + resultMind);
         }
 
-
-        // Inteligencia de Ivan ...
+        // Inteligencia para Ivan.
 
         if(cliente.equals("Ivan") && planes.equals("xtreme"))
         {
@@ -78,7 +75,8 @@ public class Clientes_act extends AppCompatActivity {
 
         if(cliente.equals("Ivan") && planes.equals("mindfullness"))
         {
-            text.setText("El precio del plan es: " + pl.getMindfullnes());
+            text.setText("El precio del plan es: " + resultMind);
         }
+
     }
 }

@@ -70,9 +70,11 @@ public class Menu_act extends AppCompatActivity {
         clientes.add("Roberto");
         clientes.add("Ivan");
         clientes.add("Claudio");
+        clientes.add("Maria");
 
         planes.add("xtreme");
         planes.add("mindfullness");
+        planes.add("Premium");
 
         Intent i = new Intent(this, Clientes_act.class);
         i.putExtra("listaClientes", clientes); // preparo el dato que quiero envíar.

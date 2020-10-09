@@ -27,12 +27,4 @@ public class Planes {
         return mindfullnes;
     }
 
-    // Mutadores
-
-    public void setXtreme(int xtreme)
-    {
-        this.xtreme = xtreme;
-    }
-
-
 }
