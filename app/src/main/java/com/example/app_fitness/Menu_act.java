@@ -60,6 +60,12 @@ public class Menu_act extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void Insumos(View v)
+    {
+        Intent i = new Intent(this, Insumos_act.class);
+        startActivity(i);
+    }
+
     public void Clientes(View v)
     {
         // Envío el dato
