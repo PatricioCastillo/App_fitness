@@ -18,6 +18,7 @@ public class Clientes_act extends AppCompatActivity {
     private Spinner spin1, spin2;
     private EditText edit;
     private TextView text;
+    private int precio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
